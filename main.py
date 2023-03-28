@@ -1,4 +1,3 @@
-TOKEN = OPENAI_API_KEY
 import os
 import openai
 import requests
@@ -7,7 +6,9 @@ import time
 import sys
 import yt_dlp
 from pydub import AudioSegment
-
+from dotenv import load_dotenv
+load_dotenv()
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 # 設定 yt_dlp 下載影片的選項
 ydl_opts = {
     'format': 'bestaudio/best',
@@ -41,7 +42,7 @@ print(f'音檔總共分割{i+1}份')
 print()
 print(f'開始將{i+1}份音檔交給WhisperAI製作語音辨識轉錄稿')
 print()
-openai.api_key = TOKEN
+
 # 使用 OpenAI API 轉換音檔為文字
 for o in range(i+1):
     audio_file = open(f'output_{o}.mp3', "rb")
