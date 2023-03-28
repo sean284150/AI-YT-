@@ -74,7 +74,7 @@ if st.button('開始處理'):
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-            {"role": "system", "content": "請你成為YT影片摘要的小幫手，以下為轉錄稿部分內容，有可能是影片開頭，有可能是中間部分，有可能是結尾部分，以繁體中文輸出。"},
+            {"role": "system", "content": "請你成為YT影片摘要的小幫手，以下為轉錄稿部分內容，有可能是影片開頭，有可能是中間部分，有可能是結尾部分。reply in traditional Chinese."},
             {"role": "user", "content": t}
             ],
             stream=True
