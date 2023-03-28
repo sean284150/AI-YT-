@@ -1,4 +1,4 @@
-TOKEN = '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'
+TOKEN = OPENAI_API_KEY
 import os
 import openai
 import requests
